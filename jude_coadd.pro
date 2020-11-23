@@ -269,6 +269,8 @@ skip_file:
 ;Set bad data
 	q = where(gtimes eq 0)
 	gtotal[q] = -9999
+;exposure time
+	exptime = median(gtimes)	
 
 ;Write data
 	mkhdr, out_hdr, gtotal
@@ -276,6 +278,7 @@ skip_file:
 	sxaddpar,out_hdr, "FILTER", sxpar(im_hdr, "FILTER"),"UVIT Filter"
 	calf = sxpar(im_hdr, "CALF")
 	sxaddpar, out_hdr, "CALF", calf , "Cal factor: Ergs cm-2 s-1 A-1 pixel-1 (cps)-1"
+	sxaddpar,out_hdr, "EXP_TIME",exptime,"seconds"
 	mwrfits, gtotal, output_file, out_hdr, /create
 	mwrfits, gtimes, output_file	
 	
