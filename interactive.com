@@ -14,9 +14,9 @@ if (n_elements(start_file) eq 0)then start_file = 0
 ;Default directory for NUV files.
 uv_base_dir = params.def_nuv_dir
 if (n_elements(notime) eq 0)then $
-	print,"********EXPOSURE TIME MAY NOT BE CORRECT********"
+	print,"********IF YOU ARE USING NOTIME KEYWORD, EXPOSURE TIME MAY NOT BE CORRECT********"
 if (n_elements(notime) eq 0)then $
-	print,"********RUN APPLY_TIMES AFTERWARDS**************"
+	print,"********RUN JUDE_APPLY_TIMES AFTERWARDS**************"
 if (n_elements(notime) eq 0)then $
 	notime = 1
 
